@@ -27,6 +27,7 @@
 #include <Ppi/MasterBootMode.h>
 #include <IndustryStandard/Pci22.h>
 #include <SimicsPlatforms.h>
+#include <Library/DebugLib.h>
 
 #include "Platform.h"
 
@@ -230,6 +231,8 @@ MemMapInitialization (
     // the base of the 32-bit PCI host aperture.
     //
     PciExBarBase = FixedPcdGet64 (PcdPciExpressBaseAddress);
+      DEBUG ((DEBUG_VERBOSE, "%a: 0PciExBarBase = 0x%08x\n",
+        __FUNCTION__, PciExBarBase));
     ASSERT (TopOfLowRam <= PciExBarBase);
     ASSERT (PciExBarBase <= MAX_UINT32 - SIZE_256MB);
     PciBase = (UINT32)(PciExBarBase + SIZE_256MB);
