@@ -231,7 +231,7 @@ MemMapInitialization (
     // the base of the 32-bit PCI host aperture.
     //
     PciExBarBase = FixedPcdGet64 (PcdPciExpressBaseAddress);
-      DEBUG ((DEBUG_VERBOSE, "%a: 0PciExBarBase = 0x%08x\n",
+      DEBUG ((DEBUG_VERBOSE, "%a: \n\n\n\n\n\n\n\n\n\nPciExBarBase = 0x%08x\n\n\n\n\n\n\n\n\n\n",
         __FUNCTION__, PciExBarBase));
     ASSERT (TopOfLowRam <= PciExBarBase);
     ASSERT (PciExBarBase <= MAX_UINT32 - SIZE_256MB);
